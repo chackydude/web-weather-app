@@ -1,28 +1,85 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <main>
+          <!--search-part-->
+          <div class="search-wrapper">
+              <input type="text" class="search-bar" placeholder="Enter the city name...">
+          </div>
+          <!--weather-info-part-->
+          <div class="info-wrapper">
+              <div class="location-info">
+                  <div class="locaton">New York</div>
+                  <div class="date">27 June</div>
+              </div>
+              <div class="weather">
+                  <div class="temperature">16°</div>
+                  <div class="wind">7mph</div>
+                  <div class="humidity">80%</div>
+                  <div class="pressure">760mb</div>
+              </div>
+          </div>
+      </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Calibri, sans-serif;
+    }
+
+    #app {
+        background-image: url("./assets/cold-background.jpg");
+        /*background-image: url("./assets/warm-background.png");*/
+        background-size: cover;
+        background-position: bottom;
+        transition: 0.5s;
+    }
+
+    main {
+        min-height: 100vh;
+        padding: 30px;
+    }
+
+    .search-wrapper .search-bar {
+        display: block;
+        width: 75%;
+        padding: 15px;
+        margin: auto;
+        font-size: 20px;
+        appearance: none;
+        border:none;
+        outline: none;
+        background-color: #eaeaea;
+        opacity: 0.8;
+        border-radius: 10px;
+        transition: 0.4s;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .search-wrapper .search-bar:focus {
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .info-wrapper {
+        text-align: center;
+        font-size: 30px;
+        color: #fff;
+        text-shadow: 1px 1px black;
+    }
+
+
 </style>
