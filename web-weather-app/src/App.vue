@@ -3,12 +3,18 @@
       <main>
           <!--search-part-->
           <div class="search-wrapper">
-              <input type="text" class="search-bar" placeholder="Enter the city name...">
+              <input
+                      type="text"
+                      class="search-bar"
+                      placeholder="Enter the city name..."
+                      v-model = "query"
+                      @keypress="fetchWeather"
+              >
           </div>
-          <!--weather-info-part-->
+          <!--weather-info-part v-if="typeof weather.main != 'undefined'"-->
           <div class="info-wrapper">
               <div class="location-info">
-                  <div class="locaton">New York</div>
+                  <div class="locaton"> {{ query }} </div>
                   <div class="date">27 June</div>
               </div>
               <div class="weather">
@@ -25,7 +31,34 @@
 <script>
 
 export default {
-  name: 'App',
+      name: 'App',
+      data () {
+          return {
+              // api-links to get info
+              // request to the main info about weather
+              request_base: "https://www.metaweather.com/api/location/",
+              // request to the info about the city
+              request_search_base: "https://www.metaweather.com/api/location/search/?query=",
+              query: '',
+              weather: {},
+          }
+      },
+
+      // problem is here (promise rejected)
+      methods: {
+          fetchWeather(e) {
+              if (e.key == "Enter") {
+                  fetch(`${this.request_search_base}${this.query}`,{mode: 'no-cors'})
+                  .then(result => {
+                      return result.json();
+                  }).then(this.setResult);
+              }
+          },
+          // replace weather by received data
+          setResult(result) {
+              this.weather = result;
+          }
+      }
 }
 </script>
 
