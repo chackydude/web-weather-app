@@ -48,7 +48,7 @@ export default {
       methods: {
           fetchWeather(e) {
               if (e.key == "Enter") {
-                  fetch(`${this.request_search_base}${this.query}`,{mode: 'no-cors'})
+                  fetch(`https://cors-anywhere.herokuapp.com/${this.request_search_base}${this.query}`,{mode: 'no-cors'})
                   .then(result => {
                       return result.json();
                   }).then(this.setResult);
