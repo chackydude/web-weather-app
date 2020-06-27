@@ -13,15 +13,18 @@
           </div>
           <!--weather-info-part-->
           <div class="info-wrapper" v-if="typeof weather.main != 'undefined'">
+              <img v-bind:src="imgUrl" alt="">
+              <div class="temperature"> {{Math.round(weather.main.temp)}}°C</div>
               <div class="location-info">
-                  <div class="locaton"> {{ weather.name }} </div>
-                  <div class="date">27 June</div>
+                  <div class="date"> {{ dateBuilder() }} </div>
+                  <div class="locaton">{{ weather.weather[0].main }} in {{ weather.name }} </div>
+                  <div class="description"> ({{ weather.weather[0].description }}) </div>
               </div>
               <div class="weather">
-                  <div class="temperature">16°</div>
-                  <div class="wind">7mph</div>
-                  <div class="humidity">80%</div>
-                  <div class="pressure">760mb</div>
+
+                  <div class="wind"> {{ weather.wind.speed }}mph</div>
+                  <div class="humidity">{{ weather.main.humidity }}%</div>
+                  <div class="pressure">{{ weather.main.pressure }}mb</div>
               </div>
           </div>
       </main>
@@ -43,6 +46,7 @@ export default {
               request_search_base: "https://www.metaweather.com/api/location/search/?query=",
               query: '',
               weather: {},
+              imgUrl: '',
           }
       },
 
@@ -60,6 +64,16 @@ export default {
           // replace weather by received data
           setResult(result) {
               this.weather = result;
+              this.imgUrl = "http://openweathermap.org/img/w/" + this.weather.weather[0].icon + ".png";
+          },
+          dateBuilder () {
+              let d = new Date();
+              let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+              let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              let day = days[d.getDay()];
+              let date = d.getDate();
+              let month = months[d.getMonth()];
+              return `${day} ${date} ${month}`;
           }
       }
 }
@@ -77,8 +91,8 @@ export default {
     }
 
     #app {
-        background-image: url("./assets/cold-background.jpg");
-        /*background-image: url("./assets/warm-background.png");*/
+        /*background-image: url("./assets/cold-background.jpg");*/
+        background-image: url("./assets/warm-background.png");
         background-size: cover;
         background-position: bottom;
         transition: 0.5s;
@@ -111,11 +125,16 @@ export default {
     }
 
     .info-wrapper {
+        margin-top: 100px;
         text-align: center;
         font-size: 30px;
         color: #fff;
         text-shadow: 1px 1px black;
     }
 
+    .temperature {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
 
 </style>
