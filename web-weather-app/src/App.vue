@@ -11,10 +11,10 @@
                       @keypress="fetchWeather"
               >
           </div>
-          <!--weather-info-part v-if="typeof weather.main != 'undefined'"-->
-          <div class="info-wrapper">
+          <!--weather-info-part-->
+          <div class="info-wrapper" v-if="typeof weather.main != 'undefined'">
               <div class="location-info">
-                  <div class="locaton"> {{ query }} </div>
+                  <div class="locaton"> {{ weather.name }} </div>
                   <div class="date">27 June</div>
               </div>
               <div class="weather">
@@ -34,6 +34,8 @@ export default {
       name: 'App',
       data () {
           return {
+              api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
+              url_base: 'https://api.openweathermap.org/data/2.5/',
               // api-links to get info
               // request to the main info about weather
               request_base: "https://www.metaweather.com/api/location/",
@@ -48,7 +50,8 @@ export default {
       methods: {
           fetchWeather(e) {
               if (e.key == "Enter") {
-                  fetch(`https://cors-anywhere.herokuapp.com/${this.request_search_base}${this.query}`,{mode: 'no-cors'})
+
+                  fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
                   .then(result => {
                       return result.json();
                   }).then(this.setResult);
