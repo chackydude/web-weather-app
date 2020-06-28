@@ -11,33 +11,27 @@
                       @keypress="fetchWeather"
               >
           </div>
+
           <!--weather-info-part-->
-
-          <div class="weather">
-              <div class="info-wrapper" v-if="typeof weather.main != 'undefined'">
-                  <img v-bind:src="imgUrl" alt="">
-                  <div class="temperature"> {{Math.round(weather.main.temp)}}°C</div>
-                  <div class="location-info">
-                      <div class="date"> {{ dateBuilder() }} </div>
-                      <div class="locaton">{{ weather.weather[0].main }} in {{ weather.name }} </div>
-                      <div class="description"> ({{ weather.weather[0].description }}) </div>
-                  </div>
-                  <div class="weather">
-
-                      <div class="wind"> {{ weather.wind.speed }}mph</div>
-                      <div class="humidity">{{ weather.main.humidity }}%</div>
-                      <div class="pressure">{{ weather.main.pressure }}mb</div>
-                  </div>
-              </div>
+          <div class="weather" v-if="typeof weather.main != 'undefined'">
+              <WeatherItem
+                      v-bind:weather="weather"
+                      v-bind:imgUrl="imgUrl"
+              />
           </div>
       </main>
   </div>
 </template>
 
 <script>
-
+import WeatherItem from "./components/WeatherItem";
 export default {
       name: 'App',
+
+      components: {
+          WeatherItem
+      },
+
       data () {
           return {
               api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
@@ -49,11 +43,10 @@ export default {
               request_search_base: "https://www.metaweather.com/api/location/search/?query=",
               query: '',
               weather: {},
-              imgUrl: '',
+              imgUrl: "http://openweathermap.org/img/w/",
           }
       },
 
-      // problem is here (promise rejected)
       methods: {
           fetchWeather(e) {
               if (e.key == "Enter") {
@@ -69,15 +62,6 @@ export default {
               this.weather = result;
               this.imgUrl = "http://openweathermap.org/img/w/" + this.weather.weather[0].icon + ".png";
           },
-          dateBuilder () {
-              let d = new Date();
-              let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-              let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-              let day = days[d.getDay()];
-              let date = d.getDate();
-              let month = months[d.getMonth()];
-              return `${day} ${date} ${month}`;
-          }
       }
 }
 </script>
@@ -128,26 +112,9 @@ export default {
         background-color: rgba(255, 255, 255, 0.75);
     }
 
-    .info-wrapper {
-        text-align: center;
-        font-size: 30px;
-        color: #fff;
-        text-shadow: 1px 1px black;
-        background-color:rgba(255, 255, 255, 0.4);
-        width: 300px;
-        padding: 20px;
-        border-radius: 20px;
-        margin: auto;
-    }
-
-    .temperature {
-        font-size: 50px;
-        margin-bottom: 10px;
-    }
-
     .weather {
-
-        justify-content: space-evenly;
+        display: flex;
+        justify-content: center;
     }
 
 </style>
