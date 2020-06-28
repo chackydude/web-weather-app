@@ -74,6 +74,7 @@ export default {
 
     #app {
         /*background-image: url("./assets/cold-background.jpg");*/
+        /*background-image: url("./assets/dark-background2.jpg");*/
         background-image: url("./assets/warm-background.png");
         background-size: cover;
         background-position: bottom;
