@@ -3,13 +3,10 @@
       <main>
           <!--search-part-->
           <div class="search-wrapper">
-              <input
-                      type="text"
-                      class="search-bar"
-                      placeholder="Enter the city name..."
-                      v-model = "query"
-                      @keypress="fetchWeather"
-              >
+              <SearchBar
+                      @updateWeather = "updateWeather"
+                      @updateImage = "updateImage"
+              />
           </div>
 
           <!--weather-info-part-->
@@ -18,18 +15,23 @@
                       v-bind:weather="weather"
                       v-bind:imgUrl="imgUrl"
               />
+              <DetailedWeatherItem
+                      v-bind:weather="weather"
+              />
           </div>
       </main>
   </div>
 </template>
 
 <script>
+import SearchBar from "./components/SearchBar";
 import WeatherItem from "./components/WeatherItem";
+import DetailedWeatherItem from "./components/DetailedWeatherItem";
 export default {
       name: 'App',
 
       components: {
-          WeatherItem
+          WeatherItem, SearchBar, DetailedWeatherItem
       },
 
       data () {
@@ -48,20 +50,13 @@ export default {
       },
 
       methods: {
-          fetchWeather(e) {
-              if (e.key == "Enter") {
-
-                  fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
-                  .then(result => {
-                      return result.json();
-                  }).then(this.setResult);
-              }
-          },
-          // replace weather by received data
-          setResult(result) {
+          updateWeather(result) {
               this.weather = result;
-              this.imgUrl = "http://openweathermap.org/img/w/" + this.weather.weather[0].icon + ".png";
           },
+
+          updateImage(image) {
+              this.imgUrl = image;
+          }
       }
 }
 </script>
@@ -90,29 +85,47 @@ export default {
         padding: 30px;
     }
 
-    .search-wrapper .search-bar {
-        display: block;
-        width: 75%;
-        padding: 15px;
-        margin: auto;
-        margin-bottom: 100px;
-        font-size: 20px;
-        appearance: none;
-        border:none;
-        outline: none;
-        background-color: #eaeaea;
-        opacity: 0.8;
-        border-radius: 10px;
-        transition: 0.4s;
-        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-    }
+    /*.search-wrapper .search-bar {*/
+    /*    display: block;*/
+    /*    width: 75%;*/
+    /*    padding: 15px;*/
+    /*    margin: auto;*/
+    /*    margin-bottom: 100px;*/
+    /*    font-size: 20px;*/
+    /*    appearance: none;*/
+    /*    border:none;*/
+    /*    outline: none;*/
+    /*    background-color: #eaeaea;*/
+    /*    opacity: 0.8;*/
+    /*    border-radius: 10px;*/
+    /*    transition: 0.4s;*/
+    /*    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);*/
+    /*}*/
 
-    .search-wrapper .search-bar:focus {
-        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
-        background-color: rgba(255, 255, 255, 0.75);
-    }
+    /*.search-wrapper .search-bar:focus {*/
+    /*    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);*/
+    /*    background-color: rgba(255, 255, 255, 0.75);*/
+    /*}*/
+
+    /*.info-wrapper {*/
+    /*    text-align: center;*/
+    /*    font-size: 30px;*/
+    /*    color: #fff;*/
+    /*    text-shadow: 1px 1px black;*/
+    /*    background-color:rgba(255, 255, 255, 0.4);*/
+    /*    width: 300px;*/
+    /*    padding: 20px;*/
+    /*    border-radius: 20px;*/
+    /*    margin: auto;*/
+    /*}*/
+
+    /*.temperature {*/
+    /*    font-size: 50px;*/
+    /*    margin-bottom: 10px;*/
+    /*}*/
 
     .weather {
+        transition: 1s;
         display: flex;
         justify-content: center;
     }

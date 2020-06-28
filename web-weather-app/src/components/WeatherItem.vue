@@ -8,7 +8,6 @@
             <div class="description"> ({{ weather.weather[0].description }}) </div>
         </div>
         <div class="more-info">
-
             <div class="wind"> {{ weather.wind.speed }}mph</div>
             <div class="humidity">{{ weather.main.humidity }}%</div>
             <div class="pressure">{{ weather.main.pressure }}mb</div>
@@ -20,8 +19,7 @@
     export default {
         props: ['weather', 'imgUrl'],
         data() {
-            return {
-            }
+            return {}
         },
         name: "WeatherItem",
         methods: {
@@ -47,6 +45,7 @@
         text-shadow: 1px 1px black;
         background-color:rgba(255, 255, 255, 0.4);
         width: 280px;
+        height: 400px;
         padding: 20px;
         border-radius: 20px;
         margin-left: 10px;
@@ -56,4 +55,5 @@
         font-size: 50px;
         margin-bottom: 10px;
     }
+
 </style>
