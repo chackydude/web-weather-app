@@ -3,7 +3,7 @@
         <input
                 type="text"
                 class="search-bar"
-                placeholder="Enter the city name..."
+                placeholder="Enter the city name and press 'Enter'..."
                 v-model = "query"
                 @keypress="fetchWeather"
         >
