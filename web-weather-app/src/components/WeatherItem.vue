@@ -49,6 +49,7 @@
         padding: 20px;
         border-radius: 20px;
         margin-left: 10px;
+        margin-bottom: 20px;
     }
 
     .temperature {

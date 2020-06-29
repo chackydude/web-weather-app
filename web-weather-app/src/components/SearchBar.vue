@@ -47,7 +47,7 @@
         width: 60%;
         padding: 15px;
         margin: auto;
-        margin-bottom: 70px;
+        margin-bottom: 60px;
         font-size: 20px;
         appearance: none;
         border:none;

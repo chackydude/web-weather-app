@@ -1,24 +1,8 @@
 <template>
   <div id="app">
+      <h1>Weather App</h1>
+      <hr>
       <main>
-<!--          search-part-->
-          <div class="search-wrapper">
-              <SearchBar
-                      @updateWeather = "updateWeather"
-                      @updateImage = "updateImage"
-              />
-          </div>
-
-          <!--weather-info-part-->
-          <div class="weather" v-if="typeof weather.main != 'undefined'">
-                  <WeatherItem
-                          v-bind:weather="weather"
-                          v-bind:imgUrl="imgUrl"
-                  />
-                  <DetailedWeatherItem
-                          v-bind:weather="weather"
-                  />
-          </div>
           <router-view/>
       </main>
   </div>
@@ -26,14 +10,11 @@
 
 <script>
 
-import SearchBar from "./components/SearchBar";
-import WeatherItem from "./components/WeatherItem";
-import DetailedWeatherItem from "./components/DetailedWeatherItem";
 export default {
       name: 'App',
 
       components: {
-          WeatherItem, SearchBar, DetailedWeatherItem
+          // WeatherItem, SearchBar, DetailedWeatherItem
       },
 
       data () {
@@ -47,16 +28,6 @@ export default {
               weather: {},
           }
       },
-
-      methods: {
-          updateWeather(result) {
-              this.weather = result;
-          },
-
-          updateImage(image) {
-              this.imgUrl = image;
-          }
-      }
 }
 </script>
 
@@ -69,6 +40,7 @@ export default {
 
     body {
         font-family: Calibri, sans-serif;
+        color: white;
     }
 
     #app {
@@ -83,16 +55,23 @@ export default {
     main {
         min-height: 100vh;
         padding: 30px;
+        margin: auto;
+        width: 900px;
     }
 
-    .fade {
-        transition: opacity .5s;
+    h1 {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .weather {
-        transition: 1s;
-        display: flex;
-        justify-content: center;
+    hr {
+        width: 55%;
+        margin: auto;
+        border: none;
+        height: 2px;
+        background-color: white;
+        border-radius: 1px;
     }
 
 </style>
