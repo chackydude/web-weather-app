@@ -53,9 +53,7 @@ export default {
     }
 
     #app {
-        /*background-image: url("./assets/cold-background.jpg");*/
-        /*background-image: url("./assets/dark-background2.jpg");*/
-        background-image: url("./assets/warm-background.png");
+        background-image: url("assets/light-background.png");
         background-size: cover;
         background-position: bottom;
         transition: 0.5s;

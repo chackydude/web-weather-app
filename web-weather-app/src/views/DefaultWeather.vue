@@ -76,13 +76,6 @@
         font-family: Calibri, sans-serif;
     }
 
-    #defaultWeather {
-        background-image: url("/web-weather-app/src/assets/warm-background.png");
-        background-size: cover;
-        background-position: bottom;
-        transition: 0.5s;
-    }
-
     .weatherItems {
         transition: 1s;
         display: flex;
