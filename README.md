@@ -8,7 +8,7 @@ This is test weather application for SimbirSoft. Here I tried to work with https
 ![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-dark.png)
 ![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-light.png)
 ![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/detailed-dark.png)
-<img src="https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/detailed-dark.png" width="200" height="112"/>  
+<img src="https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/detailed-dark.png" width="500" height="280"/>  
 
 ### Theme change example
 ![example of themes](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/themes.gif)
