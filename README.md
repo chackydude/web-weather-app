@@ -14,6 +14,8 @@ This is test weather application for SimbirSoft. Here I tried to work with https
 If API requests didn't work with key in the code, you can try to use some of that:
 * 27bfdfa924c98c7f0f0664c9e7761b4b
 * 1867c62c334ab35f2648f00ab3dd3ecf
+### Layouts
+There is a link to the [layouts](https://www.figma.com/file/gegXgCTbzqULd5OR6loWMV/Vue?node-id=31%3A2) if Figma.
 ### Stack of technologies
 * JS / HTML5 / CSS3
 * VueJS 2.6.11
