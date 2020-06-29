@@ -2,11 +2,9 @@
     <div id="defaultWeather">
         <div class="weatherItems">
             <WeatherItem
-                    v-for="item of this.cities" :key="item"
-                    v-bind:weather = "fetchWeatherForDefault(item)"
-                    v-bind:imgUrl = "imgUrl + '10d.png'"
+                    v-bind:weather = "fetchGlobal(this.cities[0])"
+                    v-bind:imgUrl = "imgUrl + this.weather.weather[0].icon + '.png'"
             />
-<!--            v-bind:imgUrl = "this.imgUrl + fetchWeatherForDefault(item).weather[0].icon + '.png'"-->
         </div>
     </div>
 </template>
@@ -24,21 +22,27 @@
                 cities: ['Boston', 'Kazan', 'Moscow', 'Ulyanovsk'],
                 url_base: 'https://api.openweathermap.org/data/2.5/',
                 imgUrl: "http://openweathermap.org/img/w/",
+                weather: {}
             }
         },
         // в общем пометка для себяпроснувшегося:
         // роутинг пытался настроить, почти настроил
         // проблемка с передачей json к WeatherItem, мы его получаем нормальный, но при передаче он undefined
+        // fetch несколько раз на странице - проблема
         methods: {
             fetchWeatherForDefault(city) {
                 fetch(`${this.url_base}weather?q=${city}&units=metric&APPID=${this.api_key}`)
                     .then(result => {
                         return result.json();
                     }).then(result => {
-                    console.log(result)
+                        this.weather = result;
                 });
             },
-
+            fetchGlobal(item) {
+                this.fetchWeatherForDefault(item);
+                this.cities.filter(element => element !== item)
+                return this.weather
+            }
         }
     }
 </script>
