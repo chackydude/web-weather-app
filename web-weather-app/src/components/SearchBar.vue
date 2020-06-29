@@ -44,14 +44,14 @@
 <style scoped>
     .search-wrapper .search-bar {
         display: block;
-        width: 60%;
+        width: 500px;
         padding: 15px;
         margin: auto;
-        margin-bottom: 60px;
         font-size: 20px;
         appearance: none;
         border:none;
         outline: none;
+        color: black;
         background-color: #eaeaea;
         opacity: 0.8;
         border-radius: 10px;

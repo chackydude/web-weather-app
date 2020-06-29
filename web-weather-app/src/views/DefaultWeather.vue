@@ -3,7 +3,7 @@
         <div class="nav">
             <router-link to="/" class="navItem">Home</router-link>
             <router-link to="/DetailedWeather" class="navItem">Detailed</router-link>
-            <p id="information">Here you can find 3 example queries</p>
+            <p id="information">Here you can find 3️⃣example queries</p>
         </div>
         <div class="weatherItems">
             <WeatherItem

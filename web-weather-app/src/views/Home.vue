@@ -1,8 +1,8 @@
 <template>
     <div class="home-wrapper">
         <h1>HomePage</h1>
-        <h2>Vue weather wep-application. If you want too check application press "Get Started".
-            For custom detailed response check "Detailed".</h2>
+        <h2>Vue weather wep-application ⛅. If you want too check application press "Get Started".
+            For custom detailed response check "Detailed" 🔍.</h2>
         <router-link to="/DefaultWeather" class="navItem">GET STARTED</router-link>
     </div>
 </template>

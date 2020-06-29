@@ -1,8 +1,8 @@
 <template>
     <div id="detailed">
-        <router-link to="/">Home</router-link>
-        <router-link to="/DefaultWeather">Default</router-link>
-        <main>
+        <div class="nav">
+            <router-link to="/" class="navItem">Home</router-link>
+            <router-link to="/DefaultWeather" class="navItem">Default</router-link>
             <!--search-part-->
             <div class="search-wrapper">
                 <SearchBar
@@ -10,6 +10,8 @@
                         @updateImage = "updateImage"
                 />
             </div>
+        </div>
+        <main>
 
             <!--weather-info-part-->
             <div class="weather" v-if="typeof weather.main != 'undefined'">
@@ -61,11 +63,12 @@
     }
 </script>
 
-<style>
+<style scoped>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        color: white;
     }
 
     body {
@@ -79,15 +82,35 @@
         transition: 0.5s;
     }
 
-    main {
-        min-height: 100vh;
-        padding: 30px;
-    }
-
     .weather {
-        transition: 1s;
         display: flex;
         justify-content: center;
+        margin-right: 50px;
+    }
+
+    .navItem {
+        padding: .20em 1.5em;
+        width: 100px;
+        height: 30px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .navItem:hover {
+        transition: 0.5s;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .nav {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 30px;
+    }
+
+    .search-wrapper {
+        margin-left: 30px;
     }
 
 </style>

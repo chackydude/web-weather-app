@@ -45,15 +45,16 @@ export default {
 
     #app {
         /*background-image: url("./assets/cold-background.jpg");*/
-        /*background-image: url("./assets/dark-background2.jpg");*/
-        background-image: url("./assets/warm-background.png");
+        background-image: url("./assets/dark-background2.jpg");
+        /*background-image: url("./assets/warm-background.png");*/
         background-size: cover;
         background-position: bottom;
         transition: 0.5s;
+        min-height: 100vh;
     }
 
     main {
-        min-height: 100vh;
+        /*min-height: 100vh;*/
         padding: 30px;
         margin: auto;
         width: 900px;
