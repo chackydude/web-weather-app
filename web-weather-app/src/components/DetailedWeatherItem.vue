@@ -5,14 +5,13 @@
         <div class="feels-like">Feels like {{Math.round(weather.main.feels_like)}}°C</div>
         <div class="coordinates">Latitude: {{weather.coord.lat}}
                                     Longitude: {{weather.coord.lon}} </div>
+        <div class="country">Country: {{weather.sys.country}}</div>
         <div class="wind-direction">Wind degree: {{Math.round(weather.wind.deg)}}</div>
+        <div class="clouds">Cloudiness: {{weather.clouds.all}}%</div>
         <div class="visibility">Visibility: {{weather.visibility}}m</div>
-        <div class="country">{{weather.sys.country}}</div>
         <div class="sunrise">Sunrise: {{new Date(weather.sys.sunrise*1000).toLocaleString("en-US")}}</div>
         <div class="sunset">Sunset: {{new Date(weather.sys.sunset*1000).toLocaleString("en-US")}}</div>
-        <div class="sunrise">DT: {{new Date(weather.dt*1000).toLocaleString("en-US")}}</div>
-        <div class="clouds">Cloudiness: {{weather.clouds.all}}%</div>
-        <div class="timezone">Timezone: {{weather.timezone}}</div>
+        <div class="sunrise">Obtained: {{new Date(weather.dt*1000).toLocaleString("en-US")}}</div>
     </div>
 </template>
 
