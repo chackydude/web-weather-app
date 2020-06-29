@@ -5,8 +5,15 @@ This is test weather application for SimbirSoft. Here I tried to work with https
 ### Some examples of pages
 
 ![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/home.png)
-<img src="https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-dark.png" width="500" height="330"/> <img src="https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-light.png" width="500" height="330"/> 
-![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/detailed-dark.png)
+![default_page_dark](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-dark.png)
+![default_page_light](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/default-light.png)
+![detailed_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/detailed-dark.png)
 ### Theme change example
 ![example of themes](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/themes.gif)
 ### About API 
+If API requests didn't work with key in the code, you can try to use some of that:
+* 27bfdfa924c98c7f0f0664c9e7761b4b
+* 1867c62c334ab35f2648f00ab3dd3ecf
+### Stack of technologies
+* JS / HTML5 / CSS3
+* VueJS 2.6.11
