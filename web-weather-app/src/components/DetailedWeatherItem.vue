@@ -23,6 +23,7 @@
 </script>
 
 <style scoped>
+
     .info-wrapper {
         text-align: center;
         font-size: 30px;
@@ -32,7 +33,6 @@
         width: 500px;
         padding: 20px;
         border-radius: 20px;
-        margin-left: 10px;
     }
 
 </style>

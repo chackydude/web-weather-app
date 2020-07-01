@@ -1,8 +1,8 @@
 <template>
-    <div id="detailed">
+    <div id="detailed-wrapper">
         <div class="navBar">
             <router-link to="/" class="navItem">Home</router-link>
-            <router-link to="/DefaultWeather" class="navItem">Default</router-link>
+            <router-link to="/default" class="navItem">Default</router-link>
             <!--search-part-->
             <SearchBar class="search-wrapper"
                     @updateWeather = "updateWeather"
@@ -38,10 +38,10 @@
 
         data () {
             return {
-                api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
-                // api-links to get info
-                // request to the main info about weather
-                url_base: 'https://api.openweathermap.org/data/2.5/',
+                // api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
+                // // api-links to get info
+                // // request to the main info about weather
+                // url_base: 'https://api.openweathermap.org/data/2.5/',
                 imgUrl: "http://openweathermap.org/img/w/",
                 query: '',
                 weather: {},
@@ -103,6 +103,10 @@
     .search-wrapper {
         margin-left: 20px;
         width: 70%;
+    }
+
+    .detailItem {
+        margin-left: 10px;
     }
 
     @media (max-width: 1000px) {
@@ -177,43 +181,4 @@
         }
     }
 
-    /*default*/
-
-    /*    .weathItem {*/
-    /*        font-size: 35px;*/
-    /*        margin-bottom: 20px;*/
-    /*        width: 300px;*/
-    /*    }*/
-
-    /*    .nav {*/
-    /*        flex-direction: column;*/
-    /*        margin-bottom: 20px;*/
-    /*    }*/
-
-        /*.navItem {*/
-        /*    margin-left: auto;*/
-        /*    margin-right: auto;*/
-        /*    width: 220px;*/
-        /*    height: 40px;*/
-        /*    font-size: 20px;*/
-        /*    text-align: center;*/
-        /*    margin-bottom: 20px;*/
-        /*}*/
-    /*}*/
-
-    /*@media (max-width: 600px) {*/
-    /*    .weathItem {*/
-    /*        font-size: 20px;*/
-    /*        width: 200px;*/
-    /*    }*/
-    /*}*/
-
-    /*@media (max-width: 400px) {*/
-    /*    .navItem {*/
-    /*        margin: auto;*/
-    /*        width: 150px;*/
-    /*        height: 30px;*/
-    /*        font-size: 15px;*/
-    /*    }*/
-    /*}*/
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <div id="defaultWeather">
+    <div id="default-wrapper">
         <div class="nav">
             <router-link to="/" class="navItem">Home</router-link>
-            <router-link to="/DetailedWeather" class="navItem">Detailed</router-link>
+            <router-link to="/detailed" class="navItem">Detailed</router-link>
             <p id="information">Here you can find 3️⃣example queries</p>
         </div>
         <div class="weatherItems">
@@ -37,10 +37,11 @@
 
         data() {
             return {
-                api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
                 cities: [{name : 'Boston', id : 4930956},
                             {name : 'Kazan', id : 551487},
                             {name : 'Moscow', id: 524901}],
+                api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
+                // request to the info about the city, + group&id for the group of cities
                 url_base: 'https://api.openweathermap.org/data/2.5/',
                 imgUrl: "http://openweathermap.org/img/w/",
                 weather: {},
@@ -57,7 +58,6 @@
 
             setResult(result) {
                 this.weather = result;
-                console.log(result.json)
             }
         },
 
@@ -80,7 +80,6 @@
     }
 
     .weatherItems {
-        transition: 1s;
         display: flex;
         justify-content: center;
     }
@@ -179,4 +178,5 @@
             margin-bottom: 5px;
         }
     }
+
 </style>

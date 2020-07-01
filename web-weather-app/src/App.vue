@@ -67,24 +67,6 @@ export default {
         border-radius: 1px;
     }
 
-    #changer {
-        color: white;
-        width: 100px;
-        height: 30px;
-        border-radius: 10px;
-        border: 2px solid rgb(255, 255, 255);
-        background-color:rgba(255, 255, 255, 0);
-        outline: none;
-        margin-top: 5px;
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
-
-    #changer:hover {
-        transition: 0.5s;
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
     .header {
         display: flex;
         justify-content: center;
@@ -96,7 +78,25 @@ export default {
         margin-top: 5px;
         font-size: 25px;
     }
-    
+
+    #changer {
+        color: white;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        border: 2px solid rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
+        outline: none;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    #changer:hover {
+        transition: 0.5s;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
     @media (max-width: 400px) {
         #name {
             font-size: 20px;

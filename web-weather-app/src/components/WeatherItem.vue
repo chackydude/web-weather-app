@@ -8,9 +8,9 @@
             <div class="description"> ({{ weather.weather[0].description }}) </div>
         </div>
         <div class="more-info">
-            <div class="wind"> {{ weather.wind.speed }}mph</div>
-            <div class="humidity">{{ weather.main.humidity }}%</div>
-            <div class="pressure">{{ weather.main.pressure }}mb</div>
+            <div class="wind">Wind speed: {{ weather.wind.speed }}mph</div>
+            <div class="humidity">Humidity: {{ weather.main.humidity }}%</div>
+            <div class="pressure">Pressure {{ weather.main.pressure }}mb</div>
         </div>
     </div>
 </template>
@@ -38,6 +38,7 @@
 </script>
 
 <style>
+
     .info-wrapper {
         text-align: center;
         font-size: 30px;
@@ -47,8 +48,6 @@
         width: 280px;
         padding: 20px;
         border-radius: 20px;
-        margin-left: 10px;
-        margin-bottom: 20px;
     }
 
     .temperature {

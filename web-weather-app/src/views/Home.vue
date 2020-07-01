@@ -1,14 +1,15 @@
 <template>
-    <div class="home-wrapper">
+    <div id="home-wrapper">
         <h1>HomePage</h1>
         <h2>Vue weather wep-application ⛅. If you want too check application press "Get Started".
             For custom detailed response check "Detailed" 🔍.</h2>
-        <router-link to="/DefaultWeather" class="navItem">GET STARTED</router-link>
+        <router-link to="/default" class="navItem">GET STARTED</router-link>
     </div>
 </template>
 
 <style scoped>
-    .home-wrapper {
+
+    #home-wrapper {
         color: white;
         background-size: cover;
         background-position: bottom;
@@ -36,7 +37,7 @@
     }
 
     @media (max-width: 850px){
-        .home-wrapper {
+        #home-wrapper {
             width: 90%;
         }
 
@@ -55,7 +56,7 @@
         }
     }
     @media (max-width: 380px) {
-        .home-wrapper {
+        #home-wrapper {
             width: 100%;
         }
 

@@ -13,11 +13,11 @@ export default new Router({
             component: Home,
         },
         {
-            path: '/DefaultWeather',
+            path: '/default',
             component: () => import("./views/DefaultWeather.vue"),
         },
         {
-            path: '/DetailedWeather',
+            path: '/detailed',
             component: () => import("./views/DetailedWeather.vue"),
         }
     ]
