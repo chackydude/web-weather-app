@@ -110,24 +110,12 @@
     }
 
     @media (max-width: 1000px) {
-        .search-wrapper {
-            margin: auto;
-        }
-
-        .weathItem {
-            font-size: 20px;
-        }
-
-        .detailItem {
-            font-size: 20px;
-        }
-    }
-
-    @media (max-width: 1000px) {
 
         .search-wrapper {
             margin-top: 20px;
             width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .navBar {
@@ -148,9 +136,11 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20px;
+            font-size: 20px;
         }
 
         .detailItem {
+            font-size: 20px;
             width: 300px;
             margin: auto;
         }
