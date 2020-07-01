@@ -16,19 +16,8 @@
 export default {
       name: 'App',
 
-      components: {
-          // WeatherItem, SearchBar, DetailedWeatherItem
-      },
-
       data () {
           return {
-              api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
-              // api-links to get info
-              // request to the main info about weather
-              url_base: 'https://api.openweathermap.org/data/2.5/',
-              imgUrl: "http://openweathermap.org/img/w/",
-              query: '',
-              weather: {},
               theme: true,
           }
       },
@@ -49,14 +38,13 @@ export default {
 
     body {
         font-family: Calibri, sans-serif;
-        color: white;
     }
 
     #app {
-        background-image: url("assets/light-background.png");
+        color: white;
+        background: url("assets/light-background.png") bottom no-repeat;
         background-size: cover;
-        background-position: bottom;
-        transition: 0.5s;
+        transition: 0.75s;
         min-height: 100vh;
     }
 
@@ -65,14 +53,13 @@ export default {
     }
 
     main {
-        /*min-height: 100vh;*/
         padding: 30px;
         margin: auto;
-        width: 900px;
+        width: 60%;
     }
 
     hr {
-        width: 55%;
+        width: 60%;
         margin: auto;
         border: none;
         height: 2px;
@@ -81,6 +68,7 @@ export default {
     }
 
     #changer {
+        color: white;
         width: 100px;
         height: 30px;
         border-radius: 10px;
@@ -101,12 +89,24 @@ export default {
         display: flex;
         justify-content: center;
         margin: auto;
-        width: 800px;
+        width: 60%;
     }
 
     #name {
         margin-top: 5px;
         font-size: 25px;
+    }
+    
+    @media (max-width: 400px) {
+        #name {
+            font-size: 20px;
+        }
+
+        #changer {
+            height: 30px;
+            width: 70px;
+            font-size: 10px;
+        }
     }
 
 </style>

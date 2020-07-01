@@ -76,7 +76,7 @@
     }
 
     .weather {
-        display: flex;
+        display: block;
         justify-content: center;
         margin-right: 50px;
     }

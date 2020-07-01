@@ -12,7 +12,6 @@
         color: white;
         background-size: cover;
         background-position: bottom;
-        transition: 0.5s;
         width: 500px;
         margin: auto;
         text-align: center;
@@ -24,8 +23,6 @@
 
     .navItem {
         padding: .20em 1.5em;
-        width: 100px;
-        height: 30px;
         border: 2px solid rgb(255, 255, 255);
         border-radius: 10px;
         text-decoration: none;
@@ -37,4 +34,34 @@
         transition: 0.5s;
         background-color: rgba(255, 255, 255, 0.4);
     }
+
+    @media (max-width: 850px){
+        .home-wrapper {
+            width: 90%;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+        .navItem {
+            font-size: 30px;
+        }
+    }
+    
+    @media (max-width: 540px) {
+        .navItem {
+            font-size: 20px;
+            padding: .30em 1em;
+        }
+    }
+    @media (max-width: 380px) {
+        .home-wrapper {
+            width: 100%;
+        }
+
+        .navItem {
+            font-size: 15px;
+        }
+    }
+
 </style>
