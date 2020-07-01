@@ -37,7 +37,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .info-wrapper {
         text-align: center;
         font-size: 30px;
@@ -45,7 +45,6 @@
         text-shadow: 1px 1px black;
         background-color:rgba(255, 255, 255, 0.4);
         width: 280px;
-        height: 400px;
         padding: 20px;
         border-radius: 20px;
         margin-left: 10px;

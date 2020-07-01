@@ -7,14 +7,17 @@
         </div>
         <div class="weatherItems">
             <WeatherItem
+                class="weathItem"
                 v-bind:weather= "this.weather.list[0]"
                 v-bind:imgUrl = "this.imgUrl + this.weather.list[0].weather[0].icon + '.png'"
             />
             <WeatherItem
+                    class="weathItem"
                     v-bind:weather= "this.weather.list[1]"
                     v-bind:imgUrl = "this.imgUrl + this.weather.list[1].weather[0].icon + '.png'"
             />
             <WeatherItem
+                    class="weathItem"
                     v-bind:weather= "this.weather.list[2]"
                     v-bind:imgUrl = "this.imgUrl + this.weather.list[2].weather[0].icon + '.png'"
             />
@@ -64,7 +67,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     * {
         color: white;
         margin: 0;
@@ -106,6 +109,9 @@
         display: flex;
         justify-content: flex-start;
         margin-bottom: 80px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #information {
@@ -115,4 +121,62 @@
         font-size: 18px;
     }
 
+    .weathItem {
+        padding: 20px;
+        margin-left: 10px;
+    }
+
+    @media (max-width: 1300px) {
+        .weathItem {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .weatherItems {
+            display: block;
+            margin: auto;
+        }
+
+        .weathItem {
+            font-size: 35px;
+            margin-bottom: 20px;
+            width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .nav {
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .navItem {
+            margin-left: auto;
+            margin-right: auto;
+            width: 220px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .weathItem {
+            font-size: 20px;
+            width: 200px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .navItem {
+            margin-right: auto;
+            margin-left: auto;
+            width: 150px;
+            height: 30px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+    }
 </style>

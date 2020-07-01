@@ -55,7 +55,7 @@ export default {
     main {
         padding: 30px;
         margin: auto;
-        width: 60%;
+        width: 80%;
     }
 
     hr {

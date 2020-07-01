@@ -3,7 +3,7 @@
         <input
                 type="text"
                 class="search-bar"
-                placeholder="Enter the city name and press 'Enter'..."
+                placeholder="Enter the city name..."
                 v-model = "query"
                 @keypress="fetchWeather"
         >
@@ -41,12 +41,12 @@
     }
 </script>
 
-<style scoped>
+<style>
     .search-wrapper .search-bar {
         display: block;
-        width: 500px;
+        width: 100%;
         padding: 15px;
-        margin: auto;
+        /*margin: auto;*/
         font-size: 20px;
         appearance: none;
         border:none;
@@ -63,4 +63,5 @@
         box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
         background-color: rgba(255, 255, 255, 0.75);
     }
+
 </style>

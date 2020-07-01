@@ -1,29 +1,26 @@
 <template>
     <div id="detailed">
-        <div class="nav">
+        <div class="navBar">
             <router-link to="/" class="navItem">Home</router-link>
             <router-link to="/DefaultWeather" class="navItem">Default</router-link>
             <!--search-part-->
-            <div class="search-wrapper">
-                <SearchBar
-                        @updateWeather = "updateWeather"
-                        @updateImage = "updateImage"
-                />
-            </div>
+            <SearchBar class="search-wrapper"
+                    @updateWeather = "updateWeather"
+                    @updateImage = "updateImage"
+            />
         </div>
-        <main>
-
-            <!--weather-info-part-->
-            <div class="weather" v-if="typeof weather.main != 'undefined'">
-                <WeatherItem
-                        v-bind:weather="weather"
-                        v-bind:imgUrl="imgUrl"
-                />
-                <DetailedWeatherItem
-                        v-bind:weather="weather"
-                />
-            </div>
-        </main>
+        <!--weather-info-part-->
+        <div class="weather" v-if="typeof weather.main != 'undefined'">
+            <WeatherItem
+                    class="weathItem"
+                    v-bind:weather="weather"
+                    v-bind:imgUrl="imgUrl"
+            />
+            <DetailedWeatherItem
+                    class="detailItem"
+                    v-bind:weather="weather"
+            />
+        </div>
     </div>
 </template>
 
@@ -76,9 +73,8 @@
     }
 
     .weather {
-        display: block;
+        display: flex;
         justify-content: center;
-        margin-right: 50px;
     }
 
     .navItem {
@@ -96,14 +92,128 @@
         background-color: rgba(255, 255, 255, 0.4);
     }
 
-    .nav {
+    .navBar {
+        margin: auto;
+        width: 80%;
         display: flex;
         justify-content: start;
         margin-bottom: 30px;
     }
 
     .search-wrapper {
-        margin-left: 30px;
+        margin-left: 20px;
+        width: 70%;
     }
 
+    @media (max-width: 1000px) {
+        .search-wrapper {
+            margin: auto;
+        }
+
+        .weathItem {
+            font-size: 20px;
+        }
+
+        .detailItem {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 1000px) {
+
+        .search-wrapper {
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .navBar {
+            flex-direction: column;
+        }
+
+        .navItem {
+            margin-left: auto;
+            margin-right: auto;
+            width: 220px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .weathItem {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+
+        .detailItem {
+            width: 300px;
+            margin: auto;
+        }
+
+        .weather {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .navItem {
+            margin-right: auto;
+            margin-left: auto;
+            width: 150px;
+            height: 30px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .weathItem {
+            font-size: 20px;
+            width: 200px;
+        }
+
+        .detailItem {
+            font-size: 15px;
+            width: 200px;
+        }
+    }
+
+    /*default*/
+
+    /*    .weathItem {*/
+    /*        font-size: 35px;*/
+    /*        margin-bottom: 20px;*/
+    /*        width: 300px;*/
+    /*    }*/
+
+    /*    .nav {*/
+    /*        flex-direction: column;*/
+    /*        margin-bottom: 20px;*/
+    /*    }*/
+
+        /*.navItem {*/
+        /*    margin-left: auto;*/
+        /*    margin-right: auto;*/
+        /*    width: 220px;*/
+        /*    height: 40px;*/
+        /*    font-size: 20px;*/
+        /*    text-align: center;*/
+        /*    margin-bottom: 20px;*/
+        /*}*/
+    /*}*/
+
+    /*@media (max-width: 600px) {*/
+    /*    .weathItem {*/
+    /*        font-size: 20px;*/
+    /*        width: 200px;*/
+    /*    }*/
+    /*}*/
+
+    /*@media (max-width: 400px) {*/
+    /*    .navItem {*/
+    /*        margin: auto;*/
+    /*        width: 150px;*/
+    /*        height: 30px;*/
+    /*        font-size: 15px;*/
+    /*    }*/
+    /*}*/
 </style>
