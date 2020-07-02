@@ -10,7 +10,7 @@ This is test weather application for SimbirSoft. Here I tried to work with https
 ### Theme change example:
 ![example of themes](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/themes.gif)
 ### App has responsive layout:
-![responsive layout](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/respinsive layout.gif)
+![responsive layout](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/respinsive_layout.gif)
 ### Some examples of pages
 
 ![home_page](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/home.png)
