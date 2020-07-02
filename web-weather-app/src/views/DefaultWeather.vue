@@ -7,9 +7,9 @@
         </div>
         <div class="weatherItems">
             <WeatherItem
-                class="weathItem"
-                v-bind:weather= "this.weather.list[0]"
-                v-bind:imgUrl = "this.imgUrl + this.weather.list[0].weather[0].icon + '.png'"
+                    class="weathItem"
+                    v-bind:weather= "this.weather.list[0]"
+                    v-bind:imgUrl = "this.imgUrl + this.weather.list[0].weather[0].icon + '.png'"
             />
             <WeatherItem
                     class="weathItem"
@@ -28,18 +28,16 @@
 
 <script>
     import WeatherItem from "../components/WeatherItem";
-
     export default {
         name: 'DefaultWeather',
         components: {
             WeatherItem,
         },
-
         data() {
             return {
                 cities: [{name : 'Boston', id : 4930956},
-                            {name : 'Kazan', id : 551487},
-                            {name : 'Moscow', id: 524901}],
+                    {name : 'Kazan', id : 551487},
+                    {name : 'Moscow', id: 524901}],
                 api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
                 // request to the info about the city, + group&id for the group of cities
                 url_base: 'https://api.openweathermap.org/data/2.5/',
@@ -47,7 +45,6 @@
                 weather: {},
             }
         },
-
         methods: {
             fetchWeatherForDefault() {
                 fetch(`${this.url_base}group?id=${this.cities[0].id},${this.cities[1].id},${this.cities[2].id}&units=metric&APPID=${this.api_key}`)
@@ -55,12 +52,10 @@
                         return result.json();
                     }).then(this.setResult);
             },
-
             setResult(result) {
                 this.weather = result;
             }
         },
-
         mounted() {
             this.fetchWeatherForDefault();
         }
@@ -74,21 +69,17 @@
         padding: 0;
         box-sizing: border-box;
     }
-
     body {
         font-family: Calibri, sans-serif;
     }
-
     .weatherItems {
         display: flex;
         justify-content: center;
     }
-
     h3 {
         margin-top: 40px;
         text-align: center;
     }
-
     .navItem {
         padding: .20em 1.5em;
         width: 100px;
@@ -98,12 +89,10 @@
         text-decoration: none;
         margin-left: 10px;
     }
-
     .navItem:hover {
         transition: 0.5s;
         background-color: rgba(255, 255, 255, 0.4);
     }
-
     .nav {
         display: flex;
         justify-content: flex-start;
@@ -112,31 +101,26 @@
         margin-left: auto;
         margin-right: auto;
     }
-
     #information {
         padding-top: 7px;
         flex-basis: 65%;
         text-align: center;
         font-size: 18px;
     }
-
     .weathItem {
         padding: 20px;
         margin-left: 10px;
     }
-
     @media (max-width: 1300px) {
         .weathItem {
             font-size: 20px;
         }
     }
-
     @media (max-width: 1000px) {
         .weatherItems {
             display: block;
             margin: auto;
         }
-
         .weathItem {
             font-size: 35px;
             margin-bottom: 20px;
@@ -144,12 +128,10 @@
             margin-right: auto;
             margin-left: auto;
         }
-
         .nav {
             flex-direction: column;
             margin-bottom: 20px;
         }
-
         .navItem {
             margin-left: auto;
             margin-right: auto;
@@ -160,14 +142,12 @@
             margin-bottom: 20px;
         }
     }
-
     @media (max-width: 600px) {
         .weathItem {
             font-size: 20px;
             width: 200px;
         }
     }
-
     @media (max-width: 400px) {
         .navItem {
             margin-right: auto;
@@ -178,5 +158,4 @@
             margin-bottom: 5px;
         }
     }
-
 </style>

@@ -11,7 +11,6 @@
 </template>
 
 <script>
-    // I had some problems to port business-logic of SearchBar to vuex-module
     export default {
         name: "SearchBar",
         data () {
