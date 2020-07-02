@@ -3,7 +3,7 @@
         <img v-bind:src="imgUrl" alt="weather-icon">
         <div class="temperature"> {{Math.round(weather.main.temp)}}°C</div>
         <div class="location-info">
-            <div class="date"> {{ dateBuilder() }} </div>
+            <div class="date"> {{getDate}} </div>
             <div class="locaton">{{ weather.weather[0].main }} in {{ weather.name }} </div>
             <div class="description"> ({{ weather.weather[0].description }}) </div>
         </div>
@@ -16,29 +16,19 @@
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex'
     export default {
         props: ['weather', 'imgUrl'],
-        data() {
-            return {}
-        },
         name: "WeatherItem",
-        methods: {
-            dateBuilder () {
-                let d = new Date();
-                let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
-                                "October", "November", "December"];
-                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                let day = days[d.getDay()];
-                let date = d.getDate();
-                let month = months[d.getMonth()];
-                return `${day} ${date} ${month}`;
-            },
-        }
+        computed: mapGetters(['getDate']),
+        methods: mapActions(['dateBuilder']),
+        mounted() {
+            this.dateBuilder();
+        },
     }
 </script>
 
 <style>
-
     .info-wrapper {
         text-align: center;
         font-size: 30px;
@@ -54,5 +44,4 @@
         font-size: 50px;
         margin-bottom: 10px;
     }
-
 </style>

@@ -38,10 +38,6 @@
 
         data () {
             return {
-                // api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
-                // // api-links to get info
-                // // request to the main info about weather
-                // url_base: 'https://api.openweathermap.org/data/2.5/',
                 imgUrl: "http://openweathermap.org/img/w/",
                 query: '',
                 weather: {},

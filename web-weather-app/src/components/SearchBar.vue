@@ -5,12 +5,13 @@
                 class="search-bar"
                 placeholder="Enter the city name..."
                 v-model = "query"
-                @keypress="fetchWeather"
+                @keypress="submit"
         >
     </div>
 </template>
 
 <script>
+    // I had some problems to port business-logic of SearchBar to vuex-module
     export default {
         name: "SearchBar",
         data () {
@@ -21,22 +22,23 @@
                 query: '',
             }
         },
-
         methods: {
-            fetchWeather(e) {
-                if (e.key === "Enter" && this.query !== '') {
-
+            fetchWeather() {
                     fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
                         .then(result => {
                             return result.json();
-                        }).then(this.setResult);
-                }
+                        }).then(this.sendResult);
             },
-            // replace weather by received data
-            setResult(result) {
+            // send received data
+            sendResult(result) {
                 this.$emit("updateWeather", result);
                 this.$emit("updateImage", "http://openweathermap.org/img/w/" + result.weather[0].icon + ".png");
             },
+            submit(e) {
+                if (e.key === "Enter" && this.query.trim()) {
+                    this.fetchWeather();
+                }
+            }
         }
     }
 </script>
