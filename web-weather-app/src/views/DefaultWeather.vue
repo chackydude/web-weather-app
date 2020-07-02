@@ -1,5 +1,5 @@
 <template>
-    <div id="default-wrapper">
+    <div id="default-wrapper" v-if="typeof weather.list != 'undefined'">
         <div class="nav">
             <router-link to="/" class="navItem">Home</router-link>
             <router-link to="/detailed" class="navItem">Detailed</router-link>
