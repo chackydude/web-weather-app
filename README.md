@@ -1,7 +1,7 @@
 # Web weather single-page-application on Vue
 
 ### About:
-This is test weather application for SimbirSoft. Here I tried to work with https://openweathermap.org/api to get some info about current temperature, wind speed, pressure etc. This SPA has three pages: "home", "default-weather" and "detailed-weather". On the "default-weather" page you can get information about weather in three different cities. On the
+In this app I tried to work with https://openweathermap.org/api to get some info about current temperature, wind speed, pressure etc. This SPA has three pages: "home", "default-weather" and "detailed-weather". On the "default-weather" page you can get information about weather in three different cities. On the
 "detailed-weather" page you can get more information about specific city. Also it has two different themes. 
 
 ![example of pages](https://github.com/chackydude/web-weather-app/raw/master/web-weather-app/public/media/SPA.gif)
@@ -23,7 +23,7 @@ If [API](https://openweathermap.org/api) requests didn't work with key in the co
 
 ### Layouts:
 
-There is a link to the [layouts](https://www.figma.com/file/gegXgCTbzqULd5OR6loWMV/Vue?node-id=31%3A2) if Figma.
+There is a link to the [layouts](https://www.figma.com/file/gegXgCTbzqULd5OR6loWMV/Vue?node-id=31%3A2) in Figma.
 
 ### Stack of technologies:
 
