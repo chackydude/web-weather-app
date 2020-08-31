@@ -38,7 +38,7 @@
 
         data () {
             return {
-                imgUrl: "http://openweathermap.org/img/w/",
+                imgUrl: process.env.VUE_APP_GET_IMG_URL,
                 query: '',
                 weather: {},
             }

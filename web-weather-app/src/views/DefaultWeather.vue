@@ -38,10 +38,10 @@
                 cities: [{name : 'Boston', id : 4930956},
                     {name : 'Kazan', id : 551487},
                     {name : 'Moscow', id: 524901}],
-                api_key: '182c7bbcc2c022c0b3f13b3ccf9198cc',
+                api_key: process.env.VUE_APP_API_KEY,
                 // request to the info about the city, + group&id for the group of cities
-                url_base: 'https://api.openweathermap.org/data/2.5/',
-                imgUrl: "http://openweathermap.org/img/w/",
+                url_base: process.env.VUE_APP_BASE_URL,
+                imgUrl: process.env.VUE_APP_GET_IMG_URL,
                 weather: {},
             }
         },

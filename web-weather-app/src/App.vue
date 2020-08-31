@@ -1,10 +1,6 @@
 <template>
   <div id="app" :class="theme !== true ? 'dark' : ''">
-      <div class="header">
-          <p id="name">Weather App</p>
-          <button v-on:click="changeTheme" id="changer">Change Theme</button>
-      </div>
-      <hr>
+      <HeaderBar @changeTheme=changeTheme />
       <main>
           <router-view/>
       </main>
@@ -13,19 +9,20 @@
 
 <script>
 
+import HeaderBar from "./components/HeaderBar";
 export default {
-      name: 'App',
-
-      data () {
-          return {
-              theme: true,
-          }
-      },
-     methods: {
-          changeTheme() {
-              this.theme = !this.theme
-          }
-     }
+    name: 'App',
+    components: {HeaderBar},
+    data () {
+      return {
+          theme: true,
+      }
+    },
+    methods: {
+        changeTheme() {
+          this.theme = !this.theme
+        }
+    }
 }
 </script>
 
@@ -57,56 +54,4 @@ export default {
         margin: auto;
         width: 80%;
     }
-
-    hr {
-        width: 60%;
-        margin: auto;
-        border: none;
-        height: 2px;
-        background-color: white;
-        border-radius: 1px;
-    }
-
-    .header {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        width: 60%;
-    }
-
-    #name {
-        margin-top: 5px;
-        font-size: 25px;
-    }
-
-    #changer {
-        color: white;
-        width: 100px;
-        height: 30px;
-        border-radius: 10px;
-        border: 2px solid rgb(255, 255, 255);
-        background-color: rgba(255, 255, 255, 0);
-        outline: none;
-        margin-top: 5px;
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
-
-    #changer:hover {
-        transition: 0.5s;
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-    @media (max-width: 400px) {
-        #name {
-            font-size: 20px;
-        }
-
-        #changer {
-            height: 30px;
-            width: 70px;
-            font-size: 10px;
-        }
-    }
-
 </style>

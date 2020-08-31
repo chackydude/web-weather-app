@@ -1,14 +1,13 @@
 <template>
     <div id="home-wrapper">
         <h1>HomePage</h1>
-        <h2>Vue weather wep-application ⛅. If you want too check application press "Get Started".
+        <h2>Vue weather wep-application ⛅. If you want to check application press "Get Started".
             For custom detailed response check "Detailed" 🔍.</h2>
         <router-link to="/default" class="navItem">GET STARTED</router-link>
     </div>
 </template>
 
 <style scoped>
-
     #home-wrapper {
         color: white;
         background-size: cover;
@@ -29,18 +28,17 @@
         text-decoration: none;
         font-size: 50px;
         color: white;
+        transition: all 0.5s;
     }
 
     .navItem:hover {
-        transition: 0.5s;
         background-color: rgba(255, 255, 255, 0.4);
     }
 
-    @media (max-width: 850px){
+    @media (max-width: 850px) {
         #home-wrapper {
             width: 90%;
         }
-
         h2 {
             font-size: 20px;
         }
@@ -53,15 +51,6 @@
         .navItem {
             font-size: 20px;
             padding: .30em 1em;
-        }
-    }
-    @media (max-width: 380px) {
-        #home-wrapper {
-            width: 100%;
-        }
-
-        .navItem {
-            font-size: 15px;
         }
     }
 
